@@ -1,3 +1,4 @@
+// tailwind.config.js
 import tailwindcssAnimate from 'tailwindcss-animate';
 
 /** @type {import('tailwindcss').Config} */
@@ -11,6 +12,9 @@ export default {
   ],
   prefix: "",
   theme: {
+    fontFamily: {
+      eavm: ['Eavm Regular', 'sans-serif'],
+    },
     container: {
       center: true,
       padding: "2rem",
@@ -19,6 +23,9 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        eavm: ['Eavm Regular', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -69,14 +76,32 @@ export default {
           to: { height: "0" },
         },
         glow: {
-          '0%, 100%': { opacity: 0.5 },
-          '50%': { opacity: 1 },
-        }
+          'from': {
+            textShadow: '0 0 20px #a855f7, 0 0 30px #a855f7, 0 0 40px #a855f7',
+          },
+          'to': {
+            textShadow: '0 0 10px #a855f7, 0 0 20px #a855f7, 0 0 30px #a855f7',
+          },
+        },
+        float: {
+          '0%, 100%': {
+            transform: 'translate(0, 0)',
+          },
+          '50%': {
+            transform: 'translate(20px, 20px)',
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        'glow': 'glow 2s ease-in-out infinite',
+        'glow': 'glow 2s ease-in-out infinite alternate',
+        'float-slow': 'float 8s ease-in-out infinite',
+        'float-medium': 'float 10s ease-in-out infinite',
+        'float-fast': 'float 12s ease-in-out infinite',
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
     },
   },

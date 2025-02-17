@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import {
   Card,
   CardContent,
@@ -31,6 +32,7 @@ const ProjectCard = ({
   liveUrl,
   onClick = () => {},
 }: ProjectCardProps) => {
+  const { t } = useTranslation();
   return (
     <motion.div
       whileHover={{ y: -5 }}
@@ -92,7 +94,7 @@ const ProjectCard = ({
               }}
             >
               <ExternalLink className="w-4 h-4 mr-2" />
-              Live Demo
+              {t('projects.liveDemo')}
             </Button>
           )}
           <Button
@@ -104,7 +106,7 @@ const ProjectCard = ({
             }}
           >
             <Github className="w-4 h-4 mr-2" />
-            Code
+            {t('projects.code')}
           </Button>
         </CardFooter>
       </Card>

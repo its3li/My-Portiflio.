@@ -13,16 +13,18 @@ interface Project {
   githubUrl: string;
 }
 
+import { forwardRef } from "react";
+
 interface ProjectsGridProps {
   onProjectClick?: (project: Project) => void;
 }
 
-const ProjectsGrid = ({
+const ProjectsGrid = forwardRef<HTMLDivElement, ProjectsGridProps>(({
   onProjectClick = () => {},
-}: ProjectsGridProps) => {
+}, ref) => {
   const { t } = useTranslation();
 
-  const projects = [
+    const projects = [
     {
       id: "1",
       title: t('projects.items.quantum.title'),
@@ -87,7 +89,7 @@ const ProjectsGrid = ({
             {t('projects.description')}
           </p>
         </div>
-        <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div ref={ref} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project) => (
             <motion.div key={project.id} variants={itemVariants} className="h-full">
               <ProjectCard
@@ -105,6 +107,6 @@ const ProjectsGrid = ({
       </motion.div>
     </div>
   );
-};
+});
 
 export default ProjectsGrid;

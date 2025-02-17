@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card.tsx";
 import { Badge } from "@/components/ui/badge";
 import { useTranslation } from "react-i18next";
 
@@ -73,7 +73,7 @@ const AboutSection = () => {
           <p className="text-xl text-muted-foreground mb-8">{t('about.subtitle')}</p>
           <Card className="mb-16">
             <CardContent className="pt-6">
-              <p className="text-lg leading-relaxed">{t('about.bio')}</p>
+              <p className="text-lg leading-relaxed" dangerouslySetInnerHTML={{ __html: t('about.bio') }} />
             </CardContent>
           </Card>
         </div>

@@ -10,10 +10,13 @@ const arEGTranslations = {
     viewWork: 'شوف شغلي',
     contact: 'كلمني',
   },
-  projects: {
-    title: 'مشاريعي المميزة',
-    description: 'دي مشاريعي اللي بفخر بيها',
-    items: {
+    projects: {
+      title: "مشاريعي المميزة",
+      description: "دي اكتر مشاريع تبعت فيها",
+      viewWork: 'جرب الموقع',
+      code: 'الكود',
+      liveDemo: 'جرب الموقع',
+        items: {
       quantum: {
         title: 'شات كوانتم للذكاء الاصطناعي',
         description: 'تجربة مستقبلية للتعامل مع الذكاء الاصطناعي بواجهة بسيطة وحركات سلسة.',
@@ -38,7 +41,7 @@ const arEGTranslations = {
     categories: {
       frontend: 'الواجهة الأمامية',
       backend: 'الخلفية',
-      otherSkills: 'مهارات تانية',
+      otherskills: 'اخري',
       ai: 'ذكاء اصطناعي'
     }
   },
@@ -86,6 +89,8 @@ const enTranslations = {
   projects: {
     title: 'Featured Projects',
     description: 'Those are the projects I\'m most proud of',
+    liveDemo: 'Live Demo',
+    code: 'The Code',
     items: {
       quantum: {
         title: 'Quantum AI Chat',
@@ -111,14 +116,14 @@ const enTranslations = {
     categories: {
       frontend: 'Frontend',
       backend: 'Backend',
-      otherSkills: 'Other Skills',
+      otherskills: 'Others',
       ai: 'AI'
     }
   },
   about: {
     title: 'About Me',
     subtitle: 'My Journey as a Developer',
-    bio: 'Hey! I\'m Ali, a 15-year-old developer from Egypt with a love for building fast, responsive, and beautiful web apps. I started coding when I was 12, and since then, I\'ve been working with React.js to make the internet a better place.',
+    bio: 'Hey! I\'m <span>Ali</span>, a 15-year-old developer from Egypt with a love for building fast, responsive, and beautiful web apps. I started coding when I was 12, and since then, I\'ve been working with React.js to make the internet a better place.',
     timeline: {
       2022: {
         title: 'First Steps into Coding',
@@ -156,10 +161,9 @@ i18n
       en: { translation: enTranslations },
       'ar-EG': { translation: arEGTranslations }
     },
+    lng: 'en',
     fallbackLng: 'en',
     interpolation: {
       escapeValue: false,
     },
   });
-
-export default i18n;

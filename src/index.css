@@ -3,6 +3,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+  font-family: 'Eavm';
+  src: url('/fonts/EavmRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 @layer base {
   :root {
@@ -205,7 +211,27 @@
   ::-webkit-scrollbar-thumb {
     @apply bg-purple-500/50 rounded-full;
   }
+/* global.css - Add these to your existing global.css */
+@font-face {
+  font-family: 'Eavm Regular';
+  src: url('/fonts/EavmRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
+.orb {
+  background: radial-gradient(circle at center, rgba(168, 85, 247, 0.8) 0%, transparent 70%);
+  mix-blend-mode: screen;
+}
+
+/* Optional: Add if you want smoother animations */
+* {
+  @apply transition-colors duration-200;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
   ::-webkit-scrollbar-thumb:hover {
     @apply bg-purple-500/70;
   }
